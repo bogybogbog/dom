@@ -59,3 +59,26 @@
 //   ele.classList.add("rounded-circle", "test", "");
 //   document.body.appendChild(ele);
 // }
+
+// ! ex 1
+
+// var x = document.querySelector("img");
+// document.addEventListener("mousemove", function (e) {
+//   x.style.top = e.clientY + "px";
+//   x.style.left = e.clientX + "px";
+//   console.log(e.clientY);
+//   console.log(e.clientX);
+// });
+
+// ! ex 2
+
+// var mainImage = document.getElementById("mainImage");
+// var img = document.querySelectorAll(".item img");
+
+// for (var i = 0; i < img.length; i++) {
+//   img[i].addEventListener("click", function (e) {
+//     var mySrc = e.target.getAttribute("src");
+//     mainImage.setAttribute("src", mySrc);
+//     console.log(mySrc);
+//   }); 
+// }
