@@ -80,5 +80,62 @@
 //     var mySrc = e.target.getAttribute("src");
 //     mainImage.setAttribute("src", mySrc);
 //     console.log(mySrc);
-//   }); 
+//   });
 // }
+
+// ! ex 3
+// var images = Array.from(document.querySelectorAll(".item img")); // !!!!!!!!!!!!!!!!!!!!!!!!
+// var lightBoxContainer = document.querySelector("#lightBoxContainer");
+// var lightBox = document.getElementById("lightBox");
+// var close = document.getElementById("close");
+// var prev = document.getElementById("prev");
+// var next = document.getElementById("next");
+// var currentIndex;
+// for (var i = 0; i < images.length; i++) {
+//   images[i].addEventListener("click", function (e) {
+//     lightBoxContainer.classList.replace("d-none", "d-flex");
+//     var mySrc = e.target.getAttribute("src");
+//     lightBox.style.backgroundImage = `url(${mySrc})`;
+//     currentIndex = images.indexOf(e.target);
+//   });
+// }
+// close.addEventListener("click", function () {
+//   lightBoxContainer.classList.replace("d-flex", "d-none");
+// });
+// ! sol 2
+// function slide(step) {
+//   currentIndex += step; // (1, -1)
+  
+//   if (currentIndex == images.length) {
+//     currentIndex = 0;
+//   }
+//   if (currentIndex < 0) {
+//     currentIndex = images.length - 1;
+//   }
+//   var src = images[currentIndex].getAttribute("src");
+//   lightBox.style.backgroundImage = `url(${src})`;
+// }
+// next.addEventListener("click", function(){
+//     slide(1)
+// })
+// prev.addEventListener("click", function(){
+//     slide(-1)
+// })
+// ! sol 1
+// next.addEventListener("click", function () {
+  //   currentIndex++;
+  // if (currentIndex == images.length) {
+  //     currentIndex = 0;
+  // }
+
+  //   var src = images[currentIndex].getAttribute("src");
+  //   lightBox.style.backgroundImage = `url(${src})`;
+// });
+// prev.addEventListener("click", function () {
+  //   currentIndex--;
+  //   if (currentIndex < 0) {
+  //     currentIndex = images.length - 1;
+  //   }
+  //   var src = images[currentIndex].getAttribute("src");
+  //   lightBox.style.backgroundImage = `url(${src})`;
+// });
