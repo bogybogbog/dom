@@ -37,7 +37,7 @@
 // ! }
 
 // var x = document.querySelector('')
-// document.addEventListener('keydown', function(e){
+// document.addEventListener('keydown', function(e){ 
 //     console.log(e);
 // })
 
@@ -105,7 +105,7 @@ close.addEventListener("click", function () {
 // ! sol 2
 function slide(step) {
   currentIndex += step; // (1, -1)
-  
+
   if (currentIndex == images.length) {
     currentIndex = 0;
   }
@@ -115,27 +115,43 @@ function slide(step) {
   var src = images[currentIndex].getAttribute("src");
   lightBox.style.backgroundImage = `url(${src})`;
 }
-next.addEventListener("click", function(){
-    slide(1)
+next.addEventListener("click", function () {
+  slide(1);
+});
+prev.addEventListener("click", function () {
+  slide(-1);
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key == "ArrowRight") {
+    slide(1);
+  }
+  if (e.key == "ArrowLeft") {
+    slide(-1);
+  }
+});
+document.addEventListener("keydown", function(e){
+  if(e.key = "Escape")
+  lightBoxContainer.classList.replace("d-flex", "d-none");
 })
-prev.addEventListener("click", function(){
-    slide(-1)
+document.addEventListener("click", function(e){
+  if(e.target.id == "lightBoxContainer")
+  lightBoxContainer.classList.replace("d-flex", "d-none");
 })
 // ! sol 1
 // next.addEventListener("click", function () {
-  //   currentIndex++;
-  // if (currentIndex == images.length) {
-  //     currentIndex = 0;
-  // }
+//   currentIndex++;
+// if (currentIndex == images.length) {
+//     currentIndex = 0;
+// }
 
-  //   var src = images[currentIndex].getAttribute("src");
-  //   lightBox.style.backgroundImage = `url(${src})`;
+//   var src = images[currentIndex].getAttribute("src");
+//   lightBox.style.backgroundImage = `url(${src})`;
 // });
 // prev.addEventListener("click", function () {
-  //   currentIndex--;
-  //   if (currentIndex < 0) {
-  //     currentIndex = images.length - 1;
-  //   }
-  //   var src = images[currentIndex].getAttribute("src");
-  //   lightBox.style.backgroundImage = `url(${src})`;
+//   currentIndex--;
+//   if (currentIndex < 0) {
+//     currentIndex = images.length - 1;
+//   }
+//   var src = images[currentIndex].getAttribute("src");
+//   lightBox.style.backgroundImage = `url(${src})`;
 // });
